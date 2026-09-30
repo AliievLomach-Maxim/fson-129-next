@@ -1,0 +1,14 @@
+import axios from 'axios'
+import { NoteListResponse, NoteResponse } from './types'
+
+axios.defaults.baseURL = 'https://next-v1-notes-api.goit.study'
+
+export const getNotes = async () => {
+  const { data } = await axios.get<NoteListResponse>('/notes')
+  return data
+}
+
+export const getSingleNote = async (id: string) => {
+  const { data } = await axios.get<NoteResponse>(`/notes/${id}`)
+  return data
+}
