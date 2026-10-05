@@ -10,3 +10,15 @@ export interface NoteResponse {
   categoryId: string
   userId: string
 }
+
+export interface PostResponse {
+  id: number
+  title: string
+  body: string
+}
+export interface PostListResponse {
+  posts: PostResponse[]
+  total: number
+  skip: number
+  limit: number
+}
