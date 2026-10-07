@@ -28,6 +28,11 @@ export const getSinglePosts = async (id: string) => {
   return data
 }
 
+export const getSinglePostPreview = async (id: string) => {
+  const { data } = await axios.get<PostResponse>(`/posts/${id}`)
+  return data
+}
+
 export const getPostTags = async () => {
   const { data } = await axios.get<string[]>(`/posts/tag-list`)
   return data
