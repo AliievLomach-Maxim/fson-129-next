@@ -15,6 +15,8 @@ export interface PostResponse {
   id: number
   title: string
   body: string
+  tags: string[]
+  views: 305
 }
 export interface PostListResponse {
   posts: PostResponse[]

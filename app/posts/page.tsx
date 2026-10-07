@@ -1,7 +1,9 @@
 import { getPosts } from '@/lib/api'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 const PostListPage = async () => {
+  redirect('/posts/filter/all')
   const response = await getPosts()
   return (
     <div>
