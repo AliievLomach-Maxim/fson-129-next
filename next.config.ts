@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  images: { remotePatterns: [{ hostname: 'picsum.photos' }] },
+  // images: { remotePatterns: [new URL('https://picsum.photos/id/237/200/300')] },
+}
 
-export default nextConfig;
+export default nextConfig

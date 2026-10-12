@@ -9,9 +9,6 @@ const Header = () => {
           <Link href='/'>Home</Link>
         </li>
         <li>
-          <Link href='/notes'>Notes</Link>
-        </li>
-        <li>
           <Link href='/posts/filter/all'>Posts</Link>
         </li>
         <li>

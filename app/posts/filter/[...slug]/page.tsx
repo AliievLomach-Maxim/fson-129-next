@@ -1,6 +1,12 @@
 import SearchBox from '@/components/SearchBox/SearchBox'
 import { getPosts } from '@/lib/api'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Post list',
+  description: 'TEST',
+}
 
 interface PostListPageProps {
   params: Promise<{ slug: string[] }>
