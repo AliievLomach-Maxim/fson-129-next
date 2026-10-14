@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { PostListResponse, PostResponse } from './types'
+import { CreatePostRequest, PostListResponse, PostResponse } from './types'
 
 // axios.defaults.baseURL = 'https://next-v1-notes-api.goit.study'
 axios.defaults.baseURL = 'https://dummyjson.com'
@@ -30,6 +30,11 @@ export const getSinglePostPreview = async (id: string) => {
 
 export const getPostTags = async () => {
   const { data } = await axios.get<string[]>(`/posts/tag-list`)
+  return data
+}
+
+export const createPost = async (newPost: CreatePostRequest) => {
+  const { data } = await axios.post<PostResponse>(`/posts/add`, newPost)
   return data
 }
 // import axios from 'axios'

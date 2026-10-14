@@ -16,6 +16,8 @@ const Sidebar = async () => {
             <Link href={`/posts/filter/${tag}`}>{tag}</Link>
           </li>
         ))}
+        <hr />
+        <Link href={`/posts/actions/create`}>Create new Post</Link>
       </ul>
     </div>
   )

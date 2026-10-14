@@ -1,15 +1,26 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useTestStore } from '@/lib/store/test-store'
+// import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
 
-export const metadata: Metadata = {
-  title: 'About my site',
-  description: 'TEST',
-}
+// export const metadata: Metadata = {
+//   title: 'About my site',
+//   description: 'TEST',
+// }
 const About = () => {
+  const testStore = useTestStore()
+  console.log('About render')
   return (
     <div>
       <h1>About</h1>
+      <br />
+      <button onClick={() => testStore.setText('TEST 123')}>Set test</button>
+      {/* <h2>
+        testText:
+        {testStore.testText}
+      </h2> */}
       <br />
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta et alias reprehenderit

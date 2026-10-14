@@ -24,3 +24,8 @@ export interface PostListResponse {
   skip: number
   limit: number
 }
+export interface CreatePostRequest {
+  title: string
+  body: string
+  userId: string
+}
