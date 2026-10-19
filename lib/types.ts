@@ -29,3 +29,29 @@ export interface CreatePostRequest {
   body: string
   userId: string
 }
+
+export interface CategoryResponse {
+  id: string
+  name: string
+  description: string
+}
+
+export interface UserResponse {
+  id: string
+  email: string
+  username: string
+  role: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface LoginRequest {
+  email: string
+  password: string
+}
+
+export interface RegisterRequest {
+  email: string
+  username: string
+  password: string
+}
