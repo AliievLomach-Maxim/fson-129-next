@@ -180,7 +180,13 @@
         <li>cookies in Route Handler</li>
         <li>add login(formValues) in form</li>
     </ul>
-    <li>AuthStore</li>
+</ul>
+</details>
+
+<details>
+  <summary>Заняття 2</summary>
+<ul>
+ <li>AuthStore</li>
     <ul>
         <li>create store</li>
         <li>checkSession client</li>
@@ -201,6 +207,12 @@
         <li>add in handleLogout</li>
         <li>add setUser in sign-in & sign-up pages</li>
     </ul>
-    <li>pre-render error with getCategories</li>
+    <li>middleware</li>
+    <ul>
+        <li>private routes</li>
+        <li>public routes</li>
+        <li>public layout refresh</li>
+    </ul>
+    <li>private requests</li>
 </ul>
 </details>

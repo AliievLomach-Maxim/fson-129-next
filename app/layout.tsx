@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider'
 import { Toaster } from 'react-hot-toast'
+import AuthProvider from '@/components/AuthProvider/AuthProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,13 +40,15 @@ export default function RootLayout({ children, preview }: LayoutProps<'/'>) {
       <Toaster />
       <html lang='en' className={`${geistSans.variable} ${geistMono.variable}`}>
         <TanStackProvider>
-          <body className={robotoTest.variable}>
-            <Header />
-            <hr />
-            <hr />
-            <main>{children}</main>
-            <div>{preview}</div>
-          </body>
+          <AuthProvider>
+            <body className={robotoTest.variable}>
+              <Header />
+              <hr />
+              <hr />
+              <main>{children}</main>
+              <div>{preview}</div>
+            </body>
+          </AuthProvider>
         </TanStackProvider>
       </html>
     </>
