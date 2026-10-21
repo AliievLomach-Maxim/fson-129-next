@@ -44,12 +44,13 @@ import {
   NoteListResponse,
   NoteResponse,
   RegisterRequest,
+  SessionResponse,
   UserResponse,
 } from './types'
 
 // axios.defaults.baseURL = 'https://next-v1-notes-api.goit.study'
 // axios.defaults.baseURL =
-const nextServerInstance = axios.create({
+export const nextServerInstance = axios.create({
   baseURL: 'http://localhost:3000/api',
 })
 
@@ -77,5 +78,20 @@ export const login = async (user: LoginRequest) => {
 
 export const register = async (user: RegisterRequest) => {
   const { data } = await nextServerInstance.post<UserResponse>(`/auth/register`, user)
+  return data
+}
+
+export const checkSession = async () => {
+  const { data } = await nextServerInstance.get<SessionResponse>(`/auth/session`)
+  return data.success
+}
+
+export const getMe = async () => {
+  const { data } = await nextServerInstance.get<UserResponse>(`/auth/me`)
+  return data
+}
+
+export const logout = async () => {
+  const { data } = await nextServerInstance.post<SessionResponse>(`/auth/logout`)
   return data
 }

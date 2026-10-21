@@ -1,13 +1,20 @@
 'use client'
 
 import { login } from '@/lib/api'
+import { useAuth } from '@/lib/store/auth-store'
 import { LoginRequest } from '@/lib/types'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+  const setAuth = useAuth((state) => state.setAuth)
+
+  const router = useRouter()
+
   const handleSubmit = async (formData: FormData) => {
     const user = Object.fromEntries(formData) as unknown as LoginRequest
     const res = await login(user)
-    console.log('res', res)
+    setAuth(res)
+    router.replace('/')
   }
   return (
     <form action={handleSubmit}>
